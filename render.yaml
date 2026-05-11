@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: rino-enterprises-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server/index.js
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: EMAIL_USER
+        value: rinosocialenterprises@gmail.com
+      - key: EMAIL_PASSWORD
+        sync: false
+      - key: NODE_ENV
+        value: production
